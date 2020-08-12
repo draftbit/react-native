@@ -109,7 +109,7 @@ class WebSocketTest extends React.Component<{}, State> {
     return this.state.lastMessage === this.state.testExpectedResponse;
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.testConnect();
   }
 

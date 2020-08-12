@@ -49,7 +49,7 @@ function createContainer<Props: Object, State>(
     _cacheKey = `RNTester:${spec.version || 'v1'}:${spec.cacheKeySuffix(
       this.props,
     )}`;
-    componentDidMount() {
+    UNSAFE_componentDidMount() {
       AsyncStorage.getItem(this._cacheKey, (err, value) => {
         if (!err && value) {
           this.setState({value: JSON.parse(value)});

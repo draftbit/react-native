@@ -23,7 +23,7 @@ class BasicStorageExample extends React.Component<{}, $FlowFixMeState> {
     messages: [],
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._loadInitialState().done();
   }
 

@@ -315,7 +315,7 @@ class NetworkOverlay extends React.Component<Props, State> {
     WebSocketInterceptor.enableInterception();
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._enableXHRInterception();
     this._enableWebSocketInterception();
   }

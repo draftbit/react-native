@@ -47,7 +47,7 @@ class ReactContentSizeUpdateTest extends React.Component<Props, State> {
     );
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._timeoutID = setTimeout(() => {
       this.updateViewSize();
     }, 1000);

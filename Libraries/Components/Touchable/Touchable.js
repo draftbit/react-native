@@ -366,7 +366,7 @@ const LONG_PRESS_ALLOWED_MOVEMENT = 10;
  * @lends Touchable.prototype
  */
 const TouchableMixin = {
-  componentDidMount: function() {
+  UNSAFE_componentDidMount: function() {
     if (!Platform.isTV) {
       return;
     }

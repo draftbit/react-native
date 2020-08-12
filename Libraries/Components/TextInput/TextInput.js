@@ -430,7 +430,7 @@ type Props = $ReadOnly<{|
   autoCorrect?: ?boolean,
 
   /**
-   * If `true`, focuses the input on `componentDidMount`.
+   * If `true`, focuses the input on `UNSAFE_componentDidMount`.
    * The default value is `false`.
    */
   autoFocus?: ?boolean,
@@ -844,7 +844,7 @@ const TextInput = createReactClass({
   _lastNativeSelection: (undefined: ?Selection),
   _rafId: (null: ?AnimationFrameID),
 
-  componentDidMount: function() {
+  UNSAFE_componentDidMount: function() {
     this._lastNativeText = this.props.value;
     const tag = ReactNative.findNodeHandle(this._inputRef);
     if (tag != null) {

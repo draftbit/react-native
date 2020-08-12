@@ -183,7 +183,7 @@ class Modal extends React.Component<Props> {
     };
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (ModalEventEmitter) {
       this._eventSubscription = ModalEventEmitter.addListener(
         'modalDismissed',

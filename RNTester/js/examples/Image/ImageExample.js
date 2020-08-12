@@ -220,7 +220,7 @@ class ImageSizeExample extends React.Component<
     height: 0,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     Image.getSize(this.props.source.uri, (width, height) => {
       this.setState({width, height});
     });

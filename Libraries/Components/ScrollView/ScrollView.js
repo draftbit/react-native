@@ -716,7 +716,7 @@ class ScrollView extends React.Component<Props, State> {
     }
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._updateAnimatedNodeAttachment();
   }
 

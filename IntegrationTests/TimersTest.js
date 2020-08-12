@@ -96,7 +96,7 @@ class TimersTest extends React.Component<Props, State> {
     cancelAnimationFrame(id);
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.setTimeout(this.testSetTimeout0, 1000);
   }
 

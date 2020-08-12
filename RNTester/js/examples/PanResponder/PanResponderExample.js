@@ -91,7 +91,7 @@ class PanResponderExample extends React.Component<Props> {
     };
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._updateNativeStyles();
   }
 

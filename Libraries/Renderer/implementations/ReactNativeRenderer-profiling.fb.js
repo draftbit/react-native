@@ -2482,7 +2482,7 @@ function mountClassInstance(
         renderExpirationTime
       ),
       (instance.state = workInProgress.memoizedState)));
-  "function" === typeof instance.componentDidMount &&
+  "function" === typeof instance.UNSAFE_componentDidMount &&
     (workInProgress.effectTag |= 4);
 }
 var isArray = Array.isArray;
@@ -4126,9 +4126,9 @@ function updateClassComponent(
                 instance.componentWillMount(),
               "function" === typeof instance.UNSAFE_componentWillMount &&
                 instance.UNSAFE_componentWillMount()),
-            "function" === typeof instance.componentDidMount &&
+            "function" === typeof instance.UNSAFE_componentDidMount &&
               (workInProgress.effectTag |= 4))
-          : ("function" === typeof instance.componentDidMount &&
+          : ("function" === typeof instance.UNSAFE_componentDidMount &&
               (workInProgress.effectTag |= 4),
             (workInProgress.memoizedProps = nextProps),
             (workInProgress.memoizedState = oldContext)),
@@ -4136,7 +4136,7 @@ function updateClassComponent(
         (instance.state = oldContext),
         (instance.context = contextType),
         (nextProps = oldProps))
-      : ("function" === typeof instance.componentDidMount &&
+      : ("function" === typeof instance.UNSAFE_componentDidMount &&
           (workInProgress.effectTag |= 4),
         (nextProps = !1));
   } else
@@ -6569,7 +6569,7 @@ function commitRootImpl(root, renderPriorityLevel) {
                 var instance$jscomp$0 = currentRef.stateNode;
                 if (currentRef.effectTag & 4)
                   if (null === current$$1$jscomp$1)
-                    instance$jscomp$0.componentDidMount();
+                    instance$jscomp$0.UNSAFE_componentDidMount();
                   else {
                     var prevProps$jscomp$0 =
                       currentRef.elementType === currentRef.type

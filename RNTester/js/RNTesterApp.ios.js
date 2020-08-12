@@ -68,7 +68,7 @@ class RNTesterApp extends React.Component<Props, RNTesterNavigationState> {
     BackHandler.addEventListener('hardwareBackPress', this._handleBack);
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._mounted = true;
     Linking.getInitialURL().then(url => {
       AsyncStorage.getItem(APP_STATE_KEY, (err, storedString) => {

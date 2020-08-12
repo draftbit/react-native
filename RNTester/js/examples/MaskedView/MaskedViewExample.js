@@ -30,7 +30,7 @@ class AnimatedMaskExample extends React.Component<Props> {
   _maskRotateAnimatedValue = new Animated.Value(0);
   _maskScaleAnimatedValue = new Animated.Value(1);
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     Animated.loop(
       Animated.sequence([
         Animated.timing(this._maskScaleAnimatedValue, {
@@ -98,7 +98,7 @@ class ChangingChildrenMaskExample extends React.Component<
     alternateChildren: true,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     setInterval(() => {
       this.setState(state => ({
         alternateChildren: !state.alternateChildren,

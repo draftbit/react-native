@@ -79,7 +79,7 @@ class ValueListenerExample extends React.Component<{}, $FlowFixMeState> {
   };
   _current = 0;
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.state.anim.addListener(e => this.setState({progress: e.value}));
   }
 
@@ -126,7 +126,7 @@ class LoopExample extends React.Component<{}, $FlowFixMeState> {
     value: new Animated.Value(0),
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     Animated.loop(
       Animated.timing(this.state.value, {
         toValue: 1,
@@ -283,7 +283,7 @@ class TrackingExample extends React.Component<
     toJS: new Animated.Value(0),
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     // we configure spring to take a bit of time to settle so that the user
     // have time to click many times and see "toValue" getting updated and
     const longSettlingSpring = {

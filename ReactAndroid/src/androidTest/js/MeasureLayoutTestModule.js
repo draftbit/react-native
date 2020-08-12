@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 let A, B, C, D;
 
 class MeasureLayoutTestApp extends React.Component {
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     A = findNodeHandle(this.refs.A);
     B = findNodeHandle(this.refs.B);
     C = findNodeHandle(this.refs.C);

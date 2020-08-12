@@ -174,7 +174,7 @@ class Incremental extends React.Component<Props, State> {
     return null;
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._mounted = true;
     if (!this.context.incrementalGroup) {
       this.props.onDone && this.props.onDone();

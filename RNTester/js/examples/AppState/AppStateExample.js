@@ -24,7 +24,7 @@ class AppStateSubscription extends React.Component<
     memoryWarnings: 0,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     AppState.addEventListener('change', this._handleAppStateChange);
     AppState.addEventListener('memoryWarning', this._handleMemoryWarning);
   }

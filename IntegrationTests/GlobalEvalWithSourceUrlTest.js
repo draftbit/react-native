@@ -18,7 +18,7 @@ const {View} = ReactNative;
 const {TestModule} = ReactNative.NativeModules;
 
 class GlobalEvalWithSourceUrlTest extends React.Component<{}> {
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (typeof global.globalEvalWithSourceUrl !== 'function') {
       throw new Error(
         'Expected to find globalEvalWithSourceUrl function on global object but found ' +

@@ -79,7 +79,7 @@ class YellowBoxInspectorSourceMapStatus extends React.Component<Props, State> {
     );
   }
 
-  componentDidMount(): void {
+  UNSAFE_componentDidMount(): void {
     this._updateAnimation();
   }
 

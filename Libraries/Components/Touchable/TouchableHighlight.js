@@ -273,7 +273,7 @@ const TouchableHighlight = ((createReactClass({
     }
   },
 
-  componentDidMount: function() {
+  UNSAFE_componentDidMount: function() {
     this._isMounted = true;
     ensurePositiveDelayProps(this.props);
   },

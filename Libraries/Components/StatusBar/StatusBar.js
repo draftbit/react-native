@@ -386,7 +386,7 @@ class StatusBar extends React.Component<Props> {
 
   _stackEntry = null;
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     // Every time a StatusBar component is mounted, we push it's prop to a stack
     // and always update the native status bar with the props from the top of then
     // stack. This allows having multiple StatusBar components and the one that is

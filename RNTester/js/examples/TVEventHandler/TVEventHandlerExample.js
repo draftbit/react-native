@@ -43,7 +43,7 @@ class TVEventHandlerView extends React.Component<Props, State> {
     }
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._enableTVEventHandler();
   }
 

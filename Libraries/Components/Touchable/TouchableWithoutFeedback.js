@@ -197,7 +197,7 @@ const TouchableWithoutFeedback = ((createReactClass({
     return this.touchableGetInitialState();
   },
 
-  componentDidMount: function() {
+  UNSAFE_componentDidMount: function() {
     ensurePositiveDelayProps(this.props);
   },
 

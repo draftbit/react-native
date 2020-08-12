@@ -51,7 +51,7 @@ exports.examples = [
             fadeAnim: new Animated.Value(0), // opacity 0
           };
         }
-        componentDidMount() {
+        UNSAFE_componentDidMount() {
           Animated.timing(
             // Uses easing functions
             this.state.fadeAnim, // The value to drive

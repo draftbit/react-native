@@ -50,7 +50,7 @@ function createAnimatedComponent(Component: any, defaultProps: any): any {
       this._attachProps(this.props);
     }
 
-    componentDidMount() {
+    UNSAFE_componentDidMount() {
       if (this._invokeAnimatedPropsCallbackOnMount) {
         this._invokeAnimatedPropsCallbackOnMount = false;
         this._animatedPropsCallback();

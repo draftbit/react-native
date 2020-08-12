@@ -25,7 +25,7 @@ class OrientationChangeExample extends React.Component<{}, $FlowFixMeState> {
     isLandscape: false,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._orientationSubscription = DeviceEventEmitter.addListener(
       'namedOrientationDidChange',
       this._onOrientationChange,

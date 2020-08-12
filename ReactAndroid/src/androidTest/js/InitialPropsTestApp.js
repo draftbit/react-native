@@ -13,7 +13,7 @@ const React = require('react');
 const {NativeModules, Text} = require('react-native');
 
 class InitialPropsTestApp extends React.Component {
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     NativeModules.InitialPropsRecordingModule.recordProps(this.props);
   }
 

@@ -54,7 +54,7 @@ class AppContainer extends React.Component<Props, State> {
     };
   }
 
-  componentDidMount(): void {
+  UNSAFE_componentDidMount(): void {
     if (__DEV__) {
       if (!global.__RCTProfileIsProfiling) {
         this._subscription = RCTDeviceEventEmitter.addListener(

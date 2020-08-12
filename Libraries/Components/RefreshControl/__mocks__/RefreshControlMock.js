@@ -18,7 +18,7 @@ const RCTRefreshControl = requireNativeComponent('RCTRefreshControl');
 
 class RefreshControlMock extends React.Component<{}> {
   static latestRef: ?RefreshControlMock;
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     RefreshControlMock.latestRef = this;
   }
   render(): React.Element<string> {

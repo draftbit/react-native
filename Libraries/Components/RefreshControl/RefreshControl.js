@@ -140,7 +140,7 @@ class RefreshControl extends React.Component<RefreshControlProps> {
   _setNativePropsOnRef: ?({refreshing: boolean}) => void;
   _lastNativeRefreshing = false;
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._lastNativeRefreshing = this.props.refreshing;
   }
 

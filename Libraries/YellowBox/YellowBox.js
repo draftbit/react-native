@@ -113,7 +113,7 @@ if (__DEV__) {
       );
     }
 
-    componentDidMount(): void {
+    UNSAFE_componentDidMount(): void {
       this._subscription = YellowBoxRegistry.observe(registry => {
         this.setState({registry});
       });

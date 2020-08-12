@@ -27,7 +27,7 @@ class ToggleAnimatingActivityIndicator extends Component<Props, State> {
     };
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.setToggleTimeout();
   }
 

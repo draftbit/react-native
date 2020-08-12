@@ -86,7 +86,7 @@ module.exports = {
    */
   spellCheck: PropTypes.bool,
   /**
-   * If `true`, focuses the input on `componentDidMount`.
+   * If `true`, focuses the input on `UNSAFE_componentDidMount`.
    * The default value is `false`.
    */
   autoFocus: PropTypes.bool,

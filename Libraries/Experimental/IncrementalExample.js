@@ -55,7 +55,7 @@ class SlowWidget extends React.Component<
       </View>
     );
   }
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     const timeToMount = performanceNow() - this.state.ctorTimestamp;
     this.setState({timeToMount});
     totalWidgets++;

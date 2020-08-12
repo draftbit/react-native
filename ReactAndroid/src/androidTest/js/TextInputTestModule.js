@@ -85,7 +85,7 @@ class TokenizedTextExample extends React.Component {
 }
 
 class TextInputTestApp extends React.Component {
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     app = this;
   }
 

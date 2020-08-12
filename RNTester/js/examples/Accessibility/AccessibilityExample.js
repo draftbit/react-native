@@ -517,7 +517,7 @@ class ScreenReaderStatusExample extends React.Component<{}> {
     screenReaderEnabled: false,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     AccessibilityInfo.addEventListener(
       'change',
       this._handleScreenReaderToggled,

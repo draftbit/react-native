@@ -29,7 +29,7 @@ type State = {
 class AppEventsTest extends React.Component<{}, State> {
   state: State = {sent: 'none', received: 'none'};
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     NativeAppEventEmitter.addListener('testEvent', this.receiveEvent);
     const event = {data: TEST_PAYLOAD, ts: Date.now()};
     TestModule.sendAppEvent('testEvent', event);

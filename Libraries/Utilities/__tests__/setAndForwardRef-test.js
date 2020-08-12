@@ -45,7 +45,7 @@ describe('setAndForwardRef', () => {
       },
     });
 
-    componentDidMount() {
+    UNSAFE_componentDidMount() {
       if (this.props.callFunc) {
         outerFuncCalled = this._nativeRef && this._nativeRef.testFunc();
       }
@@ -105,7 +105,7 @@ describe('setAndForwardRef', () => {
         stringRef?: ?React.ElementRef<typeof ForwardedComponent>,
       |}>;
 
-      componentDidMount() {
+      UNSAFE_componentDidMount() {
         /* eslint-disable react/no-string-refs */
         this.refs.stringRef && this.refs.stringRef.testFunc();
         /* eslint-enable react/no-string-refs */

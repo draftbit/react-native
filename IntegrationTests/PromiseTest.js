@@ -21,7 +21,7 @@ class PromiseTest extends React.Component<{}> {
   shouldSucceedAsync: boolean = false;
   shouldThrowAsync: boolean = false;
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     Promise.all([
       this.testShouldResolve(),
       this.testShouldReject(),

@@ -50,7 +50,7 @@ class SwipeRefreshLayoutTestApp extends React.Component {
     rows: 2,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     app = this;
   }
 

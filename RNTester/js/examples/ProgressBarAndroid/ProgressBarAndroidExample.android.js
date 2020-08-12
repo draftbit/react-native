@@ -38,7 +38,7 @@ class MovingBar extends React.Component<MovingBarProps, MovingBarState> {
     progress: 0,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._intervalID = setInterval(() => {
       const progress = (this.state.progress + 0.02) % 1;
       this.setState({progress});

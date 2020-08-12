@@ -2871,7 +2871,7 @@ function isMounted(component) {
             "%s is accessing isMounted inside its render() function. " +
               "render() should be a pure function of props and state. It should " +
               "never access something that requires stale data from the previous " +
-              "render, such as refs. Move this logic to componentDidMount and " +
+              "render, such as refs. Move this logic to UNSAFE_componentDidMount and " +
               "componentDidUpdate instead.",
             getComponentName(ownerFiber.type) || "A component"
           )
@@ -6497,7 +6497,7 @@ var ReactStrictModeWarnings = {
         false,
         "Using UNSAFE_componentWillMount in strict mode is not recommended and may indicate bugs in your code. " +
           "See https://fb.me/react-async-component-lifecycle-hooks for details.\n\n" +
-          "* Move code with side effects to componentDidMount, and set initial state in the constructor.\n" +
+          "* Move code with side effects to UNSAFE_componentDidMount, and set initial state in the constructor.\n" +
           "\nPlease update the following components: %s",
         sortedNames
       );
@@ -6543,7 +6543,7 @@ var ReactStrictModeWarnings = {
         false,
         "componentWillMount has been renamed, and is not recommended for use. " +
           "See https://fb.me/react-async-component-lifecycle-hooks for details.\n\n" +
-          "* Move code with side effects to componentDidMount, and set initial state in the constructor.\n" +
+          "* Move code with side effects to UNSAFE_componentDidMount, and set initial state in the constructor.\n" +
           "* Rename componentWillMount to UNSAFE_componentWillMount to suppress " +
           "this warning in non-strict mode. In React 17.x, only the UNSAFE_ name will work. " +
           "To rename all deprecated lifecycles to their new names, you can run " +
@@ -8940,7 +8940,7 @@ function mountClassInstance(
     }
   }
 
-  if (typeof instance.componentDidMount === "function") {
+  if (typeof instance.UNSAFE_componentDidMount === "function") {
     workInProgress.effectTag |= Update;
   }
 }
@@ -9019,7 +9019,7 @@ function resumeMountClassInstance(
   ) {
     // If an update was already in progress, we should schedule an Update
     // effect even though we're bailing out, so that cWU/cDU are called.
-    if (typeof instance.componentDidMount === "function") {
+    if (typeof instance.UNSAFE_componentDidMount === "function") {
       workInProgress.effectTag |= Update;
     }
     return false;
@@ -9064,13 +9064,13 @@ function resumeMountClassInstance(
       }
       stopPhaseTimer();
     }
-    if (typeof instance.componentDidMount === "function") {
+    if (typeof instance.UNSAFE_componentDidMount === "function") {
       workInProgress.effectTag |= Update;
     }
   } else {
     // If an update was already in progress, we should schedule an Update
     // effect even though we're bailing out, so that cWU/cDU are called.
-    if (typeof instance.componentDidMount === "function") {
+    if (typeof instance.UNSAFE_componentDidMount === "function") {
       workInProgress.effectTag |= Update;
     }
 
@@ -17420,7 +17420,7 @@ function commitLifeCycles(
       var instance = finishedWork.stateNode;
       if (finishedWork.effectTag & Update) {
         if (current$$1 === null) {
-          startPhaseTimer(finishedWork, "componentDidMount");
+          startPhaseTimer(finishedWork, "UNSAFE_componentDidMount");
           // We could update instance props and state here,
           // but instead we rely on them being set during last render.
           // TODO: revisit this when we implement resuming.
@@ -17433,7 +17433,7 @@ function commitLifeCycles(
                 ? warning$1(
                     false,
                     "Expected %s props to match memoized props before " +
-                      "componentDidMount. " +
+                      "UNSAFE_componentDidMount. " +
                       "This might either be because of a bug in React, or because " +
                       "a component reassigns its own `this.props`. " +
                       "Please file an issue.",
@@ -17444,7 +17444,7 @@ function commitLifeCycles(
                 ? warning$1(
                     false,
                     "Expected %s state to match memoized state before " +
-                      "componentDidMount. " +
+                      "UNSAFE_componentDidMount. " +
                       "This might either be because of a bug in React, or because " +
                       "a component reassigns its own `this.props`. " +
                       "Please file an issue.",
@@ -17453,7 +17453,7 @@ function commitLifeCycles(
                 : void 0;
             }
           }
-          instance.componentDidMount();
+          instance.UNSAFE_componentDidMount();
           stopPhaseTimer();
         } else {
           var prevProps =
@@ -20182,7 +20182,7 @@ function commitRootImpl(root, renderPriorityLevel) {
     // The work-in-progress tree is now the current tree. This must come after
     // the mutation phase, so that the previous tree is still current during
     // componentWillUnmount, but before the layout phase, so that the finished
-    // work is current during componentDidMount/Update.
+    // work is current during UNSAFE_componentDidMount/Update.
     root.current = finishedWork;
 
     // The next phase is the layout phase, where we call effects that read
@@ -20380,7 +20380,7 @@ function commitMutationEffects(renderPriorityLevel) {
       case Placement: {
         commitPlacement(nextEffect);
         // Clear the "placement" from effect tag so that we know that this is
-        // inserted, before any life-cycles like componentDidMount gets called.
+        // inserted, before any life-cycles like UNSAFE_componentDidMount gets called.
         // TODO: findDOMNode doesn't rely on this any more but isMounted does
         // and isMounted is deprecated anyway so we should be able to kill this.
         nextEffect.effectTag &= ~Placement;
@@ -20390,7 +20390,7 @@ function commitMutationEffects(renderPriorityLevel) {
         // Placement
         commitPlacement(nextEffect);
         // Clear the "placement" from effect tag so that we know that this is
-        // inserted, before any life-cycles like componentDidMount gets called.
+        // inserted, before any life-cycles like UNSAFE_componentDidMount gets called.
         nextEffect.effectTag &= ~Placement;
 
         // Update
@@ -23352,7 +23352,7 @@ function findNodeHandle(componentOrHandle) {
             "%s is accessing findNodeHandle inside its render(). " +
               "render() should be a pure function of props and state. It should " +
               "never access something that requires stale data from the previous " +
-              "render, such as refs. Move this logic to componentDidMount and " +
+              "render, such as refs. Move this logic to UNSAFE_componentDidMount and " +
               "componentDidUpdate instead.",
             getComponentName(owner.type) || "A component"
           )

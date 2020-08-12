@@ -44,7 +44,7 @@ function createAndMountComponent(ComponentClass, props) {
   component.UNSAFE_componentWillMount();
   // Simulate that refs were set.
   component._component = {};
-  component.componentDidMount();
+  component.UNSAFE_componentDidMount();
   return component;
 }
 

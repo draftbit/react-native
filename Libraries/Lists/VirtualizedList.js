@@ -693,7 +693,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
     this.state = initialState;
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (this._isNestedWithSameOrientation()) {
       this.context.virtualizedList.registerAsNestedChild({
         cellKey: this._getCellKey(),

@@ -22,7 +22,7 @@ class CatalystRootViewTestApp extends React.Component {
     height: 300,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     that = this;
   }
 

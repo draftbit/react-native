@@ -63,7 +63,7 @@ class Row extends React.Component {
 class WebSocketImage extends React.Component {
   ws: ?WebSocket = null;
   state: {blob: ?Blob} = {blob: null};
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     let ws = (this.ws = new WebSocket(this.props.url));
     ws.binaryType = 'blob';
     ws.onmessage = event => {

@@ -31,7 +31,7 @@ class IntegrationTestHarnessTest extends React.Component<Props, State> {
     done: false,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (this.props.waitOneFrame) {
       requestAnimationFrame(this.runTest);
     } else {

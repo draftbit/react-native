@@ -19,7 +19,7 @@ class Flip extends React.Component<{}, $FlowFixMeState> {
     theta: new Animated.Value(45),
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this._animate();
   }
 

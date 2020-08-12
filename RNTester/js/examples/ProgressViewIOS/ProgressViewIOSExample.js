@@ -26,7 +26,7 @@ class ProgressViewExample extends React.Component<Props, State> {
     progress: 0,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.updateProgress();
   }
 

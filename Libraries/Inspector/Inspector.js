@@ -96,7 +96,7 @@ class Inspector extends React.Component<
     };
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     hook.on('react-devtools', this.attachToDevtools);
     // if devtools is already started
     if (hook.reactDevtoolsAgent) {

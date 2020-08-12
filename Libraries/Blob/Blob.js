@@ -23,7 +23,7 @@ import type {BlobData, BlobOptions} from './BlobTypes';
  *
  *   class WebSocketImage extends React.Component {
  *      state = {blob: null};
- *      componentDidMount() {
+ *      UNSAFE_componentDidMount() {
  *        let ws = this.ws = new WebSocket(...);
  *        ws.binaryType = 'blob';
  *        ws.onmessage = (event) => {

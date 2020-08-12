@@ -28,7 +28,7 @@ const VAL_MERGE_1 = {foo: 1, bar: {hoo: 1, boo: 1}, moo: {a: 3}};
 const VAL_MERGE_2 = {bar: {hoo: 2}, baz: 2, moo: {a: 3}};
 const VAL_MERGE_EXPECT = {foo: 1, bar: {hoo: 2, boo: 1}, baz: 2, moo: {a: 3}};
 
-// setup in componentDidMount
+// setup in UNSAFE_componentDidMount
 let done = (result: ?boolean) => {};
 let updateMessage = (message: string) => {};
 
@@ -177,7 +177,7 @@ class AsyncStorageTest extends React.Component<{}, $FlowFixMeState> {
     done: false,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     done = () =>
       this.setState({done: true}, () => {
         TestModule.markTestCompleted();

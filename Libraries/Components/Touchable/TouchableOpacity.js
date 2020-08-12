@@ -202,7 +202,7 @@ const TouchableOpacity = ((createReactClass({
     };
   },
 
-  componentDidMount: function() {
+  UNSAFE_componentDidMount: function() {
     ensurePositiveDelayProps(this.props);
   },
 

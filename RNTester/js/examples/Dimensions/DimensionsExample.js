@@ -21,7 +21,7 @@ class DimensionsSubscription extends React.Component<
     dims: Dimensions.get(this.props.dim),
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     Dimensions.addEventListener('change', this._handleDimensionsChange);
   }
 

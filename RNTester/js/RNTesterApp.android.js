@@ -76,7 +76,7 @@ class RNTesterApp extends React.Component<Props, RNTesterNavigationState> {
     );
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     Linking.getInitialURL().then(url => {
       AsyncStorage.getItem(APP_STATE_KEY, (err, storedString) => {
         const exampleAction = URIActionMap(

@@ -80,7 +80,7 @@ class SampleTurboModuleExample extends React.Component<{||}, State> {
     );
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (global.__turboModuleProxy == null) {
       throw new Error(
         'Cannot load this example because TurboModule is not configured.',

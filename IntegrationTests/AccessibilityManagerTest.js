@@ -19,7 +19,7 @@ import NativeAccessibilityManager from 'react-native/Libraries/Components/Access
 import invariant from 'invariant';
 
 class AccessibilityManagerTest extends React.Component<{}> {
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     invariant(
       NativeAccessibilityManager,
       "NativeAccessibilityManager doesn't exist",
